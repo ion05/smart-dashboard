@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <div class="weather-component">
+            <span class="material-icons-outlined">
+                wb_cloudy
+            </span>
+            <h4><%= weather['name'] %> </h4>
+            <h2><%= weather['main']['temp_min']  %> ° Celsius </h2>
+        </div>
+        <div class="song-component">
+            <div class="date-time">
+
+            </div>
+            <% if (spotifyData) { %>
+                <% if (playing == true) {%>
+                    <div class="song-widget">
+                        <div class="song-album"></div>
+                        <div class="song-title">
+                            <%= spotifyData['item']['name'] %>
+                        </div>
+                        <div class="song-author">
+                            <%= spotifyData['item']['artist'] %>
+                        </div>
+                        <div class="play-btn">
+                        <span class="material-icons-outlined">
+                        play_arrow
+                        </span>
+                    </div>
+                </div>
+                <% } else { %>
+                Nothing is playing Right now
+                <% } %>
+                <% } else {%>
+                <form action="/spotify/connect" method="GET">
+                    <button class="connect">Connect To Spotify</button>
+                </form>
+            <% } %>
+            <ul class="song-list">
+                <li>
+                    <span class="material-icons user-prof">
+                        settings
+                    </span>
+                </li>
+                <li>
+                    <span class="material-icons-outlined call">
+                        call
+                    </span>
+                </li>
+                <li>    
+                    <span class="material-icons">
+                        two_wheeler
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="map-component">
+        <h3>Take Right</h3>
+        <h3>Mehuali-Gurugram Rd.</h3>
+        <form action="/dashboard/map/getloc" method="POST">
+            <input type="text" name="start" id="start" placeholder="origin">
+            <input name='end' placeholder="destination">
+            <button class="route-connect">Find Route</button>
+        </form>
+        <div class="instructions">
+            <% for(var instruction  = 0; instruction <  navData['routes'][0]['sections'][0]['actions']; instruction++;){ %>
+                <div class="instruction-sub">
+                    <%= navData['routes'][0]['sections'][0]['actions'].instruction %>
+                </div>
+            <%}%>
+        </div>
+    </div>
+    <div class="calendar-component">
+        <% if (events) { %>
+            <div class="calendar-event"> 
+                <h3>Events</h3>
+                <% for (var i = 0; i < events.length ; i++){%>
+                    <h4><%= events[i].summary %> </h4>
+                    <p><%= events[i].start.date %></p>
+                <% } %> 
+            </div>
+        <% }else{ %>
+            <h2>No Events</h2>    
+            <form action="dashboard/calendar/connect" method="GET">
+                <button class="btn-connect">Connect Google Calender</button>
+            </form>
+        <% } %>  
+    </div>
+</body>
+<script src="/js/dashboard.js"></script>
+</html>
