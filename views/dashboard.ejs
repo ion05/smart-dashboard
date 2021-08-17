@@ -69,21 +69,23 @@
         </div>
     </div>
     <div class="map-component">
-        <h3>Take Right</h3>
-        <h3>Mehuali-Gurugram Rd.</h3>
-        <form action="/dashboard/map/getloc" method="POST">
+        <div class="instructions">
+            <% if(map){%> 
+            <% for (var instruction  = 0; instruction <  map['routes'][0]['sections'][0]['actions'].length; instruction++){ %>
+                <div class="instruction-sub">
+                    <%= map['routes'][0]['sections'][0]['actions'][instruction].instruction %>
+                </div>
+            <%}%>
+            <% }else{%>
+            <form action="/dashboard/map/getloc" method="POST">
             <input type="text" name="start" id="start" placeholder="origin">
             <input name='end' placeholder="destination">
             <button class="route-connect">Find Route</button>
         </form>
-        <div class="instructions">
-            <% for(var instruction  = 0; instruction <  navData['routes'][0]['sections'][0]['actions']; instruction++;){ %>
-                <div class="instruction-sub">
-                    <%= navData['routes'][0]['sections'][0]['actions'].instruction %>
-                </div>
-            <%}%>
+        <% } %> 
         </div>
     </div>
+
     <div class="calendar-component">
         <% if (events) { %>
             <div class="calendar-event"> 
