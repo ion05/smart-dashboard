@@ -4,7 +4,7 @@ const router = express.Router()
 
 const { google } = require('googleapis')
 const { OAuth2 } = google.auth
-const redirect_uri='http://localhost:5000/dashboard/calendar'
+const redirect_uri='https://core-prelims.herokuapp.com/dashboard/calendar'
 const scopes = ['https://www.googleapis.com/auth/calendar.readonly'];
 const oAuth2Client = new OAuth2(
   process.env.CALENDAR_CLIENT_ID,
