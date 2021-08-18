@@ -70,7 +70,7 @@
     </div>
     <div class="map-component">
         <div class="instructions">
-            <% if(map){%> 
+            <% if(map != null){%> 
             <% for (var instruction  = 0; instruction <  map['routes'][0]['sections'][0]['actions'].length; instruction++){ %>
                 <div class="instruction-sub">
                     <%= map['routes'][0]['sections'][0]['actions'][instruction].instruction %>
