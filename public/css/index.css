@@ -523,3 +523,7 @@ span{
 .user-div .col-sm-4:nth-child(2) b{
     color: #608bff;
 }
+.event-desc{
+  margin-bottom: 2.5vw;
+   margin-top: 2.5vw;
+}
