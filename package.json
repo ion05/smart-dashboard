@@ -25,6 +25,6 @@
     "passport": "^0.4.1",
     "passport-local-mongoose": "^6.1.0",
     "spotify-web-api-node": "^5.0.2",
-    "twilio": "^3.67.2"
+    "twilio": "^3.68.0"
   }
 }
