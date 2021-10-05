@@ -49,7 +49,7 @@ const register = async (req, res) => {
               .then((user) => {
                 res.redirect("/dashboard");
               })
-              .catch((err) => console.log(err));
+              .catch((err) => );
           })
         );
       }

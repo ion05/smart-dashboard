@@ -13,9 +13,9 @@ const oAuth2Client = new OAuth2(
 
 router.get("/", (req, res) => {
   const code = req.query.code;
-  if (code != null) {
+  if (code !== null) {
     oAuth2Client.getToken(code, (err, token) => {
-      if (err) return console.error("Error Retrieveing code", err);
+      if (err) return 
       oAuth2Client.setCredentials(token);
       const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
       calendar.events.list(
@@ -27,16 +27,16 @@ router.get("/", (req, res) => {
           orderBy: "startTime",
         },
         (err, res) => {
-          if (err) return console.log("The API returned an error: " + err);
+          if (err) return 
           const events = res.data.items;
           if (events.length) {
-            console.log("Upcoming 10 events:");
+            
             events.map((event, i) => {
               const start = event.start.dateTime || event.start.date;
-              console.log(`${start} - ${event.summary}`);
+              
             });
           } else {
-            console.log("No upcoming events found.");
+            
           }
         }
       );

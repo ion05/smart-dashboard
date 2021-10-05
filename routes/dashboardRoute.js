@@ -22,12 +22,12 @@ let mapData = null;
 let calenderData = null;
 router.get("/", ensureAuthenticated, async (req, res) => {
   const weather = await getWeather();
-  console.log(weather);
+  
   let spotifyData = null;
   let playing = false;
 
   const code = req.query.code;
-  if (code != null) {
+  if (code !== null) {
     await spotifyApi.spotifyApi
       .authorizationCodeGrant(code)
       .then((data) => {
@@ -54,16 +54,16 @@ router.get("/", ensureAuthenticated, async (req, res) => {
             });
           },
           function (err) {
-            console.log("Something Went Wrong", err);
+            
           }
         );
       })
       .catch((err) => {
-        console.log(err);
+        
       });
     // spotifyApi.spotifyApi.setAccessToken(code);
   } else {
-    console.log("i am here");
+    
     res.render("dashboard", {
       user: req.user,
       spotifyData: spotifyData,
@@ -90,14 +90,14 @@ router.post("/call/make", (req, res) => {
       to: req.body.number,
       from: number,
     })
-    .then((call) => console.log(call.sid));
+    .then((call) => );
   res.redirect("/dashboard");
 });
 router.get("/crash", ensureAuthenticated, (req, res) => {
   const currentUser = req.user;
   const emergencyContact = currentUser.emergencyContact;
   const number = process.env.TWILLIO_PHONE;
-  console.log(emergencyContact, number);
+  
   client.calls
     .create({
       twiml: `<Response><Say>This is an automated from RSS Motors. ${currentUser.username} with model number ${currentUser.modelNumber} was involved in a car accident at location xyz. Emergency services have already been alerted. Please visit the location or contact services for further details</Say></Response>`,
@@ -105,7 +105,7 @@ router.get("/crash", ensureAuthenticated, (req, res) => {
       from: number,
     })
     .then(res.send("ok and?"))
-    .then((call) => console.log(call.sid));
+    .then((call) => );
 
   // commented out for now
   //   client.calls
@@ -120,16 +120,16 @@ router.get("/crash", ensureAuthenticated, (req, res) => {
 
 router.get("/profile", ensureAuthenticated, (req, res) => {
   const currentUser = req.user;
-  console.log(currentUser);
+  
   res.render("profile", { user: currentUser });
 });
 
 router.get("/calendar", ensureAuthenticated, (req, res) => {
   const code = req.query.code;
   const eventData = null;
-  if (code != null) {
+  if (code !== null) {
     oAuth2Client.getToken(code, (err, token) => {
-      if (err) return console.error("Error Retrieveing code", err);
+      if (err) return 
       oAuth2Client.setCredentials(token);
       const calendar = google.calendar({ version: "v3", auth: oAuth2Client });
       calendar.events.list(
@@ -141,7 +141,7 @@ router.get("/calendar", ensureAuthenticated, (req, res) => {
           orderBy: "startTime",
         },
         (err, res) => {
-          if (err) return console.log("The API returned an error: " + err);
+          if (err) return 
           const events = res.data.items;
           if (events.length) {
             //   console.log('Upcoming 10 events:');
@@ -150,9 +150,9 @@ router.get("/calendar", ensureAuthenticated, (req, res) => {
             //     console.log(`${start} - ${event.summary}`);
             //   });\
             calenderData = events;
-            console.log(events);
+            
           } else {
-            console.log("No upcoming events found.");
+            
           }
         }
       );
@@ -161,12 +161,12 @@ router.get("/calendar", ensureAuthenticated, (req, res) => {
   res.redirect("/dashboard");
 });
 router.get("/calendar/connect", (req, res) => {
-  console.log("Reached Here");
+  
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
     scope: scopes,
   });
-  console.log(authUrl);
+  
   res.redirect(authUrl);
 });
 router.post("/map/getloc", async (req, res) => {
@@ -181,20 +181,20 @@ router.post("/map/getloc", async (req, res) => {
     start +
     "&apiKey=" +
     api_key;
-  console.log(url_start);
+  
   await https.get(url_start, function (response) {
     response.on("data", async function (data) {
       const startdata = JSON.parse(data);
       start_lat = startdata.items[0].position.lat;
       start_lng = startdata.items[0].position.lng;
       start_co = start_lat + "," + start_lng;
-      console.log(start_co);
+      
       const url_end =
         "https://geocode.search.hereapi.com/v1/geocode?q=" +
         end +
         "&apiKey=" +
         api_key;
-      console.log(url_end);
+      
       https.get(url_end, function (response) {
         response.on("data", function (data) {
           const endData = JSON.parse(data);
@@ -202,7 +202,7 @@ router.post("/map/getloc", async (req, res) => {
           end_lat = endData.items[0].position.lat;
           end_lng = endData.items[0].position.lng;
           end_co = end_lat + "," + end_lng;
-          console.log(end_co);
+          
           url_nav =
             "https://router.hereapi.com/v8/routes?transportMode=car&origin=" +
             start_co +
@@ -211,9 +211,9 @@ router.post("/map/getloc", async (req, res) => {
             "&apiKey=" +
             api_key +
             "&return=summary,actions,instructions,polyline";
-          console.log(url_nav);
+          
           https.get(url_nav, function (response) {
-            console.log(response.statusCode);
+            
             response.on("data", function (data) {
               const navData = JSON.parse(data);
               // console.log(navData['routes'][0]['sections'][0]['actions'])

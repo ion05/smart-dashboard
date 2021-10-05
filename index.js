@@ -31,7 +31,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(console.log("Connected to Mongo DB"));
+  .then();
 
 // passport
 app.use(passport.initialize());
@@ -52,5 +52,5 @@ app.use("/dashboard", dashboardRoute);
 // listening
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`App Listening on port ${PORT}`);
+  
 });
