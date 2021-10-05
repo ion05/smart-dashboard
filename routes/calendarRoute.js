@@ -16,7 +16,7 @@ const oAuth2Client = new OAuth2(
 
 router.get("/", (req, res)=>{
     let code = req.query.code
-    if(code != null) {
+    if(code !== null) {
 oAuth2Client.getToken(code, (err,token) => {
   if (err) return console.error('Error Retrieveing code', err)
   oAuth2Client.setCredentials(token)

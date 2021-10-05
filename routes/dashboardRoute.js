@@ -27,7 +27,7 @@ router.get("/",ensureAuthenticated, async (req, res) => {
     var playing = false;
     
     var code = req.query.code;
-    if (code != null) {
+    if (code !== null) {
         await spotifyApi.spotifyApi.authorizationCodeGrant(code).then(
             data=>{
                 const access_token = data.body['access_token'];
@@ -117,7 +117,7 @@ router.get("/profile",ensureAuthenticated, (req, res)=>{
 router.get('/calendar', ensureAuthenticated, (req,res)=>{
     let code = req.query.code
     let eventData = null;
-    if(code != null) {
+    if(code !== null) {
 oAuth2Client.getToken(code, (err,token) => {
   if (err) return console.error('Error Retrieveing code', err)
   oAuth2Client.setCredentials(token)

@@ -4,7 +4,7 @@ var spotifyData = null;
 
 const spotifyAuth = async (req, res, next) => {
     var code = req.query.code;
-    if (req.query.code != null) {
+    if (req.query.code !== null) {
         var code = req.query.code;
         
         await spotifyApi.spotifyApi.authorizationCodeGrant(code).then(
