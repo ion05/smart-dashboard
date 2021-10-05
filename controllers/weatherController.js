@@ -22,8 +22,6 @@ const getWeather = (req, res) => {
               units;
 
             https.get(url, function (response) {
-              
-
               response.on("data", function (data) {
                 const weatherData = JSON.parse(data);
                 resolve(weatherData);

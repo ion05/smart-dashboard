@@ -13,25 +13,18 @@ const spotifyAuth = async (req, res, next) => {
         const refresh_token = data.body.refresh_token;
         spotifyApi.spotifyApi.setAccessToken(access_token);
         spotifyApi.spotifyApi.setRefreshToken(refresh_token);
-        
       })
-      .catch((err) => {
-        
-      });
+      .catch((err) => {});
     // spotifyApi.spotifyApi.setAccessToken(code);
     spotifyApi.spotifyApi.getMyCurrentPlaybackState().then(
       function (data) {
         if (data.body && data.body.is_playing) {
-          
           res.render("index");
         } else {
-          
           res.render("index");
         }
       },
-      function (err) {
-        
-      }
+      function (err) {}
     );
   } else {
     res.render("index");
