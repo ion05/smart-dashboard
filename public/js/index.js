@@ -1,8 +1,8 @@
-const startBtn = document.querySelector('.start');
-const displayWelcome = document.querySelector('.welcome');
-const languageDiv = document.createElement('div');
-languageDiv.classList.add('dashboard-language-div');
-const dashboard = document.querySelector('.dashboard-welcome-div')
+const startBtn = document.querySelector(".start");
+const displayWelcome = document.querySelector(".welcome");
+const languageDiv = document.createElement("div");
+languageDiv.classList.add("dashboard-language-div");
+const dashboard = document.querySelector(".dashboard-welcome-div");
 dashboard.appendChild(languageDiv);
 languageDiv.innerHTML = `
     <h2>Personalize.</h2>
@@ -70,8 +70,8 @@ languageDiv.innerHTML = `
 //     <button class="btn next-1">Next</button>
 //     <button class="btn back-1">Back</button>
 // `;
-const featureDiv = document.createElement('div');
-featureDiv.classList.add('dashboard-feature-div');
+const featureDiv = document.createElement("div");
+featureDiv.classList.add("dashboard-feature-div");
 featureDiv.innerHTML = `
     <h2>It's all yours</h2>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, mintam sed dolores? Odit, architecto ducimus!</p>
@@ -120,15 +120,21 @@ featureDiv.innerHTML = `
     <button class="btn next-2" >Next</button>
     <button class="btn back-2">Back </button>
     `;
-dashboard.appendChild(featureDiv)
-const [nextLanguageBtn,  nextFeatureBtn] = [document.querySelector('.next'), document.querySelector('.next-2')];
-const [backBtn, backBtn1] = [document.querySelector('.back-1'), document.querySelector('.back-2')];
-startBtn.addEventListener('click',()=>{
-    displayWelcome.style.display= 'none';
-    languageDiv.style.display = 'block';
-    languageDiv.style.animation = 'leftTransition 2s 0.5s ease;';
-    languageDiv.style.transition = 'all 1s ease';
-})
+dashboard.appendChild(featureDiv);
+const [nextLanguageBtn, nextFeatureBtn] = [
+  document.querySelector(".next"),
+  document.querySelector(".next-2"),
+];
+const [backBtn, backBtn1] = [
+  document.querySelector(".back-1"),
+  document.querySelector(".back-2"),
+];
+startBtn.addEventListener("click", () => {
+  displayWelcome.style.display = "none";
+  languageDiv.style.display = "block";
+  languageDiv.style.animation = "leftTransition 2s 0.5s ease;";
+  languageDiv.style.transition = "all 1s ease";
+});
 // backBtn.addEventListener('click',()=>{
 //     languageDiv.style.display='block';
 //     modelDiv.style.display='none';
@@ -137,14 +143,14 @@ startBtn.addEventListener('click',()=>{
 //     modelDiv.style.display='block';
 //     featureDiv.style.display='none';
 // })
-nextLanguageBtn.addEventListener('click',()=>{
-    languageDiv.style.display='none';
-    featureDiv.style.display='block';
-})
-backBtn1.addEventListener('click',()=>{
-    languageDiv.style.display = 'none';
-    featureDiv.style.display='none';
-})
-nextFeatureBtn.addEventListener('click',()=>{
-    window.location.href = '/register';
-})
+nextLanguageBtn.addEventListener("click", () => {
+  languageDiv.style.display = "none";
+  featureDiv.style.display = "block";
+});
+backBtn1.addEventListener("click", () => {
+  languageDiv.style.display = "none";
+  featureDiv.style.display = "none";
+});
+nextFeatureBtn.addEventListener("click", () => {
+  window.location.href = "/register";
+});

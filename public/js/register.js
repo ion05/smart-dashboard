@@ -1,6 +1,6 @@
-const dashboard = document.querySelector('.dashboard-register')
-const modelDiv = document.createElement('div');
-modelDiv.classList.add('dashboard-model-div');
+const dashboard = document.querySelector(".dashboard-register");
+const modelDiv = document.createElement("div");
+modelDiv.classList.add("dashboard-model-div");
 dashboard.appendChild(modelDiv);
 modelDiv.innerHTML = `
     <h2>Get Started</h2>

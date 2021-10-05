@@ -1,529 +1,537 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background: url('https://media.discordapp.net/attachments/873467037979131904/875788443127525446/unknown.png?width=788&height=593') no-repeat;
-    background-size: cover;
-    color: #eee !important;
-    font-family: 'Montserrat', sans-serif !important;
-    overflow-x: hidden;
+body {
+  background: url("https://media.discordapp.net/attachments/873467037979131904/875788443127525446/unknown.png?width=788&height=593")
+    no-repeat;
+  background-size: cover;
+  color: #eee !important;
+  font-family: "Montserrat", sans-serif !important;
+  overflow-x: hidden;
 }
 
-.dashboard{
-    width: 100%;
-    height: 100%;
-    display: flex;
+.dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 .dashboard-welcome-div,
 .dashboard-register,
 .dashboard-login,
-.user-div{
-    height: 50vw;
-    background: rgba(0,0,0,0.8);
-    width: 75vw;
-   border-radius: 3.5vw;
-    margin-top: 10.5vw;
-    margin-left: 11vw;
+.user-div {
+  height: 50vw;
+  background: rgba(0, 0, 0, 0.8);
+  width: 75vw;
+  border-radius: 3.5vw;
+  margin-top: 10.5vw;
+  margin-left: 11vw;
 }
-.dashboard-welcome-div h1{
-    text-align: center;
-    padding-top: 15vw;
-    font-size: 5vw !important;
-    animation: up 2s ease;
-    transition: all 1s ease;
+.dashboard-welcome-div h1 {
+  text-align: center;
+  padding-top: 15vw;
+  font-size: 5vw !important;
+  animation: up 2s ease;
+  transition: all 1s ease;
 }
 @keyframes up {
-    from{
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.dashboard-welcome-div .btn{
-    background: #7A95FF !important;
-    color: #eee;
-    height: 3.5vw;
-    width: 20vw;
-    border-radius: 2.5vw;
-    font-weight: 700;
-    margin-top: 7.5vw;
-    margin-left: 27.5vw;
+.dashboard-welcome-div .btn {
+  background: #7a95ff !important;
+  color: #eee;
+  height: 3.5vw;
+  width: 20vw;
+  border-radius: 2.5vw;
+  font-weight: 700;
+  margin-top: 7.5vw;
+  margin-left: 27.5vw;
 }
-span{
-    font-family: 'Material Icons';
+span {
+  font-family: "Material Icons";
 }
-.dashboard-language-div ,
-.dashboard-feature-div{
-    display: none;
+.dashboard-language-div,
+.dashboard-feature-div {
+  display: none;
 }
 
 @keyframes leftTransition {
-    from{
-        opacity: 0;
-        transform: translateX(15px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-.dashboard-language-div .row{
-    margin-top: 5vw;
+.dashboard-language-div .row {
+  margin-top: 5vw;
 }
-.dashboard-language-div .col-sm-4{
-    position: absolute;
+.dashboard-language-div .col-sm-4 {
+  position: absolute;
 }
-.dashboard-language-div .col-sm-4:nth-child(1){
-    margin-left: 10vw;
+.dashboard-language-div .col-sm-4:nth-child(1) {
+  margin-left: 10vw;
 }
-.dashboard-language-div .col-sm-4:nth-child(2){
-    margin-left: 40vw;
+.dashboard-language-div .col-sm-4:nth-child(2) {
+  margin-left: 40vw;
 }
-.dashboard-language-div .card,.user-div .col-sm-4{
-    padding:10px;
-    height: 25vw;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(30px);
-    border-radius: 2.5vw;
+.dashboard-language-div .card,
+.user-div .col-sm-4 {
+  padding: 10px;
+  height: 25vw;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(30px);
+  border-radius: 2.5vw;
 }
-.dashboard-language-div .card:first-child{
-    margin-right: 5vw;
+.dashboard-language-div .card:first-child {
+  margin-right: 5vw;
 }
-.dashboard-language-div .card span{
-    color: #7A95FF;
-    font-size: 7.5vw;
-    text-align: center;
-    margin-bottom: 3.5vw;
+.dashboard-language-div .card span {
+  color: #7a95ff;
+  font-size: 7.5vw;
+  text-align: center;
+  margin-bottom: 3.5vw;
 }
-.dashboard-language-div .card h2,h4{
-    text-align: center;
+.dashboard-language-div .card h2,
+h4 {
+  text-align: center;
 }
-.dashboard-language-div .card h4{
-    transform: scale(0.75);
+.dashboard-language-div .card h4 {
+  transform: scale(0.75);
 }
-.dashboard-language-div .card h2{
-    color: #7A95FF;
-    margin-top: -5vw;
+.dashboard-language-div .card h2 {
+  color: #7a95ff;
+  margin-top: -5vw;
 }
-.dashboard-language-div h2{
-    text-align: center;
-    padding-top: 5vw;
-    font-weight: 700;
+.dashboard-language-div h2 {
+  text-align: center;
+  padding-top: 5vw;
+  font-weight: 700;
 }
-.dashboard-language-div p{
-    font-size: 1vw;
-    padding-top: 1vw;
-    text-align: center;
+.dashboard-language-div p {
+  font-size: 1vw;
+  padding-top: 1vw;
+  text-align: center;
 }
-.dashboard-language-div .btn{
-    margin-top: 27.5vw;
-    margin-left: 60vw;
-    width: 10vw;
-    position: absolute;
+.dashboard-language-div .btn {
+  margin-top: 27.5vw;
+  margin-left: 60vw;
+  width: 10vw;
+  position: absolute;
 }
-.dashboard-model-div h2,p{
-    text-align: center;
+.dashboard-model-div h2,
+p {
+  text-align: center;
 }
-.dashboard-model-div h2{
-    padding-top: 5vw;
-    font-weight: 700;
+.dashboard-model-div h2 {
+  padding-top: 5vw;
+  font-weight: 700;
 }
-.dashboard-model-div p{
-    margin-top: 2.5vw;
+.dashboard-model-div p {
+  margin-top: 2.5vw;
 }
-.dashboard-model-div .row{
-    margin-top: 7.5vw;
+.dashboard-model-div .row {
+  margin-top: 7.5vw;
 }
-.dashboard-model-div .row .col-sm-4{
-    margin-left: 7.5vw !important;
+.dashboard-model-div .row .col-sm-4 {
+  margin-left: 7.5vw !important;
 }
-.dashboard-model-div .row .col-sm-5{
-    padding-left: 5vw;
-    margin-top: -5vw;
+.dashboard-model-div .row .col-sm-5 {
+  padding-left: 5vw;
+  margin-top: -5vw;
 }
-.dashboard-model-div .card{
-    padding:10px;
-    height: 20vw;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(30px);
-    border-radius: 2.5vw;
-    margin-top: -2.5vw;
-    margin-left: -2.5vw;
+.dashboard-model-div .card {
+  padding: 10px;
+  height: 20vw;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(30px);
+  border-radius: 2.5vw;
+  margin-top: -2.5vw;
+  margin-left: -2.5vw;
 }
-.dashboard-model-div .card span{
-    text-align: center;
-    margin-top: 1.5vw;
-    font-size: 5vw;
-    color: #7A95FF;
+.dashboard-model-div .card span {
+  text-align: center;
+  margin-top: 1.5vw;
+  font-size: 5vw;
+  color: #7a95ff;
 }
-.dashboard-model-div .card a{
-    color: #7A95FF;
-    text-decoration: none;
+.dashboard-model-div .card a {
+  color: #7a95ff;
+  text-decoration: none;
 }
-.dashboard-model-div .btn{
-    margin-left: 60vw;
-    width: 10vw;
+.dashboard-model-div .btn {
+  margin-left: 60vw;
+  width: 10vw;
 }
-.dashboard-login .dashboard-model-div .car-register-div{
-    position: relative;
-} 
-.dashboard-login .dashboard-model-div .car-register-div input:nth-child(1){
-    margin-left: 1.5vw;
-} 
-.dashboard-model-div .car-register-div form{
-    margin-top: 5vw;
-    position: absolute;
-    display: block;
-    margin-left: -3.5vw;
+.dashboard-login .dashboard-model-div .car-register-div {
+  position: relative;
 }
-.dashboard-model-div .car-register-div form input,.call-div input, .map-component form input{
-    background: transparent;
-    color: #eee;
-    border: none;
-    padding:10px;
-    border-bottom: 2px solid #7A95FF;
-    margin-bottom: .5vw;
+.dashboard-login .dashboard-model-div .car-register-div input:nth-child(1) {
+  margin-left: 1.5vw;
 }
-.map-component form{
-    margin-top: 1.5vw;
+.dashboard-model-div .car-register-div form {
+  margin-top: 5vw;
+  position: absolute;
+  display: block;
+  margin-left: -3.5vw;
 }
-.map-component form input{
-    margin-left: 5vw;
+.dashboard-model-div .car-register-div form input,
+.call-div input,
+.map-component form input {
+  background: transparent;
+  color: #eee;
+  border: none;
+  padding: 10px;
+  border-bottom: 2px solid #7a95ff;
+  margin-bottom: 0.5vw;
 }
-.route-connect{
-    background: #eee;
-    padding:10px;
-    border:none;
-    border-radius: 2.5vw;
-    margin-top: 5vw;
-    position: absolute;
-    font-weight: 600;
+.map-component form {
+  margin-top: 1.5vw;
+}
+.map-component form input {
+  margin-left: 5vw;
+}
+.route-connect {
+  background: #eee;
+  padding: 10px;
+  border: none;
+  border-radius: 2.5vw;
+  margin-top: 5vw;
+  position: absolute;
+  font-weight: 600;
 }
 .dashboard-model-div .car-register-div form input:nth-child(2),
-.dashboard-model-div .car-register-div form input:nth-child(4){
-    margin-left: 1.5vw;
+.dashboard-model-div .car-register-div form input:nth-child(4) {
+  margin-left: 1.5vw;
 }
-.dashboard-model-div .register{
-    position: absolute;
-    padding:10px;
-    border: none;
-    border-radius: 2.5vw;
-    width: 15vw;
-    background: #608bff;
-    color: #eee;
-    margin-left: -17.5vw;
-    margin-top: 10vw;
+.dashboard-model-div .register {
+  position: absolute;
+  padding: 10px;
+  border: none;
+  border-radius: 2.5vw;
+  width: 15vw;
+  background: #608bff;
+  color: #eee;
+  margin-left: -17.5vw;
+  margin-top: 10vw;
 }
 .dashboard-model-div input:focus,
 .map-component form input:focus,
-.call-div input:focus{
-    outline: none;
-    border-bottom: 2px solid #4164f1 !important;
+.call-div input:focus {
+  outline: none;
+  border-bottom: 2px solid #4164f1 !important;
 }
-.dashboard-feature-div h2{
-    padding-top: 2.5vw;
-    text-align: center;
-    font-weight:700;
+.dashboard-feature-div h2 {
+  padding-top: 2.5vw;
+  text-align: center;
+  font-weight: 700;
 }
-.dashboard-feature-div p{
-    margin-top: 2.5vw;
+.dashboard-feature-div p {
+  margin-top: 2.5vw;
 }
-.dashboard-feature-div .row{
-    margin-top: 5vw;
+.dashboard-feature-div .row {
+  margin-top: 5vw;
 }
-.ft-icon span{
-    color: #608bff;
-    font-size: 3.5vw;
+.ft-icon span {
+  color: #608bff;
+  font-size: 3.5vw;
 }
-.ft-icon , .ft-desc{
-    list-style: none;
-    position: absolute;
+.ft-icon,
+.ft-desc {
+  list-style: none;
+  position: absolute;
 }
-.ft-icon{
-    margin-left: 17.5vw;
+.ft-icon {
+  margin-left: 17.5vw;
 }
-.ft-icon li:nth-child(2), .ft-icon li:nth-child(3){
-    margin-top: 2.5vw;
+.ft-icon li:nth-child(2),
+.ft-icon li:nth-child(3) {
+  margin-top: 2.5vw;
 }
 .ft-desc {
-    margin-left: 27.5vw;
+  margin-left: 27.5vw;
 }
-.ft-desc p{
-    text-align: left;
-    margin-top: .5vw;
+.ft-desc p {
+  text-align: left;
+  margin-top: 0.5vw;
 }
-.next-2{
-    width: 10vw !important;
-    margin-top: 30vw !important;
-    margin-left: 60vw !important;
+.next-2 {
+  width: 10vw !important;
+  margin-top: 30vw !important;
+  margin-left: 60vw !important;
 }
-.back-2{
-    width: 10vw !important;
-    margin-top: -5.5vw !important;
-    margin-left: 7.5vw !important;
+.back-2 {
+  width: 10vw !important;
+  margin-top: -5.5vw !important;
+  margin-left: 7.5vw !important;
 }
-.dashboard-main-div{
-    width: 100%;
-    margin-top: 3vw;
-    height: 100% ;
-    border-radius: 2.5vw;
+.dashboard-main-div {
+  width: 100%;
+  margin-top: 3vw;
+  height: 100%;
+  border-radius: 2.5vw;
 }
-.weather-component{
-    padding: 10px;
-    box-shadow: -1px  1px 60px -20px rgba(83,131,231,0.75);
-    background:  rgba(0,0,0,0.8);
-    position: absolute;
-    width: 25vw;
-    padding: 10px;
-    height: 10vw;
-    border-radius: 1.5vw;
-    margin-left: 52.5vw;
-    margin-top: 5.5vw;
+.weather-component {
+  padding: 10px;
+  box-shadow: -1px 1px 60px -20px rgba(83, 131, 231, 0.75);
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  width: 25vw;
+  padding: 10px;
+  height: 10vw;
+  border-radius: 1.5vw;
+  margin-left: 52.5vw;
+  margin-top: 5.5vw;
 }
-.weather-component span{
-    border: 2px solid #608bff;
-    border-radius: 100%;
-    margin-left: 17.5vw;
-    width: 4vw;
-    height: 4vw;
-    position: absolute;
-    font-size: 2.5vw;
-    text-align: center;
-    margin-top: 2vw !important;
+.weather-component span {
+  border: 2px solid #608bff;
+  border-radius: 100%;
+  margin-left: 17.5vw;
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  font-size: 2.5vw;
+  text-align: center;
+  margin-top: 2vw !important;
 }
-.weather-component h4{
-    position: absolute;
-    font-weight: 200 !important;
-    margin-left: 2.5vw;
-    margin-top: 2vw;
+.weather-component h4 {
+  position: absolute;
+  font-weight: 200 !important;
+  margin-left: 2.5vw;
+  margin-top: 2vw;
 }
-.weather-component h2{
-    position: absolute;
-    margin-top: 4.5vw;
-    font-size: 1.5vw;
-    margin-left: 2.75vw;
+.weather-component h2 {
+  position: absolute;
+  margin-top: 4.5vw;
+  font-size: 1.5vw;
+  margin-left: 2.75vw;
 }
-.song-component{
-    box-shadow: -1px 1px 60px -20px rgba(83,131,231,0.75);
-    background : rgba(0,0,0,0.8);
-    position: absolute;
-    border-radius: 1vw;
-    margin-left: 15vw;
-    margin-top:5vw;
-    height: 22.5vw;
-    width: 35vw;
+.song-component {
+  box-shadow: -1px 1px 60px -20px rgba(83, 131, 231, 0.75);
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  border-radius: 1vw;
+  margin-left: 15vw;
+  margin-top: 5vw;
+  height: 22.5vw;
+  width: 35vw;
 }
-.song-component span{
-    cursor: pointer;
+.song-component span {
+  cursor: pointer;
 }
 .song-component h4,
-.song-component h3
-{
-    position: absolute;
+.song-component h3 {
+  position: absolute;
 }
-.song-component h4{
-    margin-left: 4.5vw;
-    margin-top: 4vw;
-    font-weight: 100;
+.song-component h4 {
+  margin-left: 4.5vw;
+  margin-top: 4vw;
+  font-weight: 100;
 }
-.song-component h3{
-    margin-left: 4.5vw;
-    margin-top: 9vw;
+.song-component h3 {
+  margin-left: 4.5vw;
+  margin-top: 9vw;
 }
-.song-component h3:nth-child(2){
-    margin-top: 6.5vw;
+.song-component h3:nth-child(2) {
+  margin-top: 6.5vw;
 }
-.song-component .song-list{
-    position: absolute;
-    list-style: none;
-    padding: 10px;
-    height: 16vw;
-    width: 5vw;
-    padding: 10px;
-    background: rgba(0,0,0,0.5);
-    border-radius: .5vw;
-    margin-left: 25vw;
-    margin-top: 2.5vw;
-    padding-top: 1.5vw;
+.song-component .song-list {
+  position: absolute;
+  list-style: none;
+  padding: 10px;
+  height: 16vw;
+  width: 5vw;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5vw;
+  margin-left: 25vw;
+  margin-top: 2.5vw;
+  padding-top: 1.5vw;
 }
-.song-component .song-list li{
-    position: absolute;
-    text-align: center;
-    font-size: 2.5vw;
-    margin-left: 0.5vw;
+.song-component .song-list li {
+  position: absolute;
+  text-align: center;
+  font-size: 2.5vw;
+  margin-left: 0.5vw;
 }
-.song-component .song-list li:nth-child(1){
-    margin-left: 0.75vw;
+.song-component .song-list li:nth-child(1) {
+  margin-left: 0.75vw;
 }
-.song-component .song-list li:nth-child(2){
-    margin-top: 5vw;
+.song-component .song-list li:nth-child(2) {
+  margin-top: 5vw;
 }
-.song-component .song-list li:nth-child(3){
-    margin-top: 10vw;
-    margin-left: 0.75vw;
+.song-component .song-list li:nth-child(3) {
+  margin-top: 10vw;
+  margin-left: 0.75vw;
 }
-.song-component .song-widget{
-    position: absolute;
-    width: 17.5vw;
-    height: 5.5vw;
-    border-radius: .5vw;
-    background:red;
-    margin-left: 4.5vw;
-    margin-top: 13vw;
+.song-component .song-widget {
+  position: absolute;
+  width: 17.5vw;
+  height: 5.5vw;
+  border-radius: 0.5vw;
+  background: red;
+  margin-left: 4.5vw;
+  margin-top: 13vw;
 }
-.song-component .song-widget .song-album{
-    background: black;
-    position: absolute;
-    height: 3.5vw;
-    width: 3.5vw;
-    border-radius: 0.5vw;
-    margin-top: 1vw;
-    margin-left: 1vw;
+.song-component .song-widget .song-album {
+  background: black;
+  position: absolute;
+  height: 3.5vw;
+  width: 3.5vw;
+  border-radius: 0.5vw;
+  margin-top: 1vw;
+  margin-left: 1vw;
 }
-.song-component .song-widget .song-title , 
-.song-component .song-widget .song-author{
-    position: absolute;;
+.song-component .song-widget .song-title,
+.song-component .song-widget .song-author {
+  position: absolute;
 }
-.song-component .song-widget .song-title
-{
-    margin-top: 1vw;
-    margin-left: 5.5vw
+.song-component .song-widget .song-title {
+  margin-top: 1vw;
+  margin-left: 5.5vw;
 }
-.song-component .song-widget .song-author{
-    transform: scale(0.75);
-    margin-top: 2.5vw;
-    margin-left: 5vw;
+.song-component .song-widget .song-author {
+  transform: scale(0.75);
+  margin-top: 2.5vw;
+  margin-left: 5vw;
 }
-.gcse-search{
-    position: absolute;
-    width: 45vw !important;
+.gcse-search {
+  position: absolute;
+  width: 45vw !important;
 }
-.map-component{
-    height: 25vw;
-    width: 35vw;
-    position: absolute;
-    box-shadow: -0.5px 5px 30px -10px rgba(83,131,231,0.75);
-    background : rgba(0,0,0,0.8);;
-    border-radius: 1.5vw;
-    margin-left: 15vw;
-    margin-top: 30vw;
+.map-component {
+  height: 25vw;
+  width: 35vw;
+  position: absolute;
+  box-shadow: -0.5px 5px 30px -10px rgba(83, 131, 231, 0.75);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 1.5vw;
+  margin-left: 15vw;
+  margin-top: 30vw;
 }
-.map-component h3{
-    margin-left: 2.5vw;
+.map-component h3 {
+  margin-left: 2.5vw;
 }
-.map-component h3:nth-child(1){
-    font-weight: 200;
-    font-size: 1.5vw;
-    margin-top: 3.5vw;
+.map-component h3:nth-child(1) {
+  font-weight: 200;
+  font-size: 1.5vw;
+  margin-top: 3.5vw;
 }
-.calendar-component{
-    width: 25vw;
-    height: 37.5vw;
-    position: absolute;
-    background : rgba(0,0,0,0.8);;
-    box-shadow: -0.5px -0.5px 30px -10px rgba(83,131,231,0.75);
-    margin-left: 52.5vw;
-    margin-top: 17.5vw;
-    padding:10px;
-    border-radius: 1.5vw !important;
-}.calendar-event h4{
-    position: absolute;
-    margin-top: 8.5vw;
-    margin-left: 1.5vw;
+.calendar-component {
+  width: 25vw;
+  height: 37.5vw;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: -0.5px -0.5px 30px -10px rgba(83, 131, 231, 0.75);
+  margin-left: 52.5vw;
+  margin-top: 17.5vw;
+  padding: 10px;
+  border-radius: 1.5vw !important;
 }
-.calendar-component h3{
-    position: absolute;
-    color: #a0a0a0;
-    margin-left:1.5vw;
-    margin-top: 3.5vw;
+.calendar-event h4 {
+  position: absolute;
+  margin-top: 8.5vw;
+  margin-left: 1.5vw;
 }
-.calendar-component p{
-    position: absolute;
-    margin-left: 1.5vw;
-    margin-top: 7vw;
+.calendar-component h3 {
+  position: absolute;
+  color: #a0a0a0;
+  margin-left: 1.5vw;
+  margin-top: 3.5vw;
 }
-.btn-connect{
-    border:none;
-    padding:10px;
-    border-radius: 2.5vh;
-    background: #eee;
-    width: 20vw;
-    margin-left: 1.5vw;
-    margin-top: 5vw;
-    font-weight: 600;
+.calendar-component p {
+  position: absolute;
+  margin-left: 1.5vw;
+  margin-top: 7vw;
 }
-.play-btn{
-    position: absolute;
-    margin-left: 13.5vw;
-    font-size: 2.5vw;
-    margin-top: .75vw;
+.btn-connect {
+  border: none;
+  padding: 10px;
+  border-radius: 2.5vh;
+  background: #eee;
+  width: 20vw;
+  margin-left: 1.5vw;
+  margin-top: 5vw;
+  font-weight: 600;
 }
-.connect{
-    background: #1DB954;
-    font-weight: 600;
-    color:#eee;
-    padding:10px;
-    border: none;
-    border-radius: 2.5vw;
-    width: 15vw;
-    position: absolute;
-    margin-top: 15vw;
-    margin-left: 5vw;
+.play-btn {
+  position: absolute;
+  margin-left: 13.5vw;
+  font-size: 2.5vw;
+  margin-top: 0.75vw;
 }
-.call-div{
-    display: none;
-    margin-top: 20vw;
+.connect {
+  background: #1db954;
+  font-weight: 600;
+  color: #eee;
+  padding: 10px;
+  border: none;
+  border-radius: 2.5vw;
+  width: 15vw;
+  position: absolute;
+  margin-top: 15vw;
+  margin-left: 5vw;
 }
-.call-div button{
-    width: 7.5vw;
-    margin-left: 2.5vw;
-    border: none;
-    border-radius:2.5vw;
-    padding:10px;
-    position: absolute;
-    margin-top: 5vw;
+.call-div {
+  display: none;
+  margin-top: 20vw;
 }
-.call-div .call-btn{
-    margin-left: -7.5vw;
+.call-div button {
+  width: 7.5vw;
+  margin-left: 2.5vw;
+  border: none;
+  border-radius: 2.5vw;
+  padding: 10px;
+  position: absolute;
+  margin-top: 5vw;
 }
-.call-div input{
-    margin-left: 5vw;
-}.call-btn .call-close{
-    position: absolute;
-    margin-top: -5vw !important;
-    margin-left: 15vw !important;
+.call-div .call-btn {
+  margin-left: -7.5vw;
+}
+.call-div input {
+  margin-left: 5vw;
+}
+.call-btn .call-close {
+  position: absolute;
+  margin-top: -5vw !important;
+  margin-left: 15vw !important;
 }
 .user-div .col-sm-4 {
-    margin-top: 10vw;
-    margin-left: 5vw;
+  margin-top: 10vw;
+  margin-left: 5vw;
 }
-.user-div .col-sm-4 span{
-    font-size: 10vw;
-    position: absolute;
-    margin-left: 6.5vw;
+.user-div .col-sm-4 span {
+  font-size: 10vw;
+  position: absolute;
+  margin-left: 6.5vw;
 }
-.user-desc{
-    margin-top: 15vw;
-    text-align: center;
+.user-desc {
+  margin-top: 15vw;
+  text-align: center;
 }
-.user-desc b{
-    color: #608bff;
+.user-desc b {
+  color: #608bff;
 }
-.user-div .col-sm-4:nth-child(2){
-    background: transparent;
-    padding-top: 7.5vw;
+.user-div .col-sm-4:nth-child(2) {
+  background: transparent;
+  padding-top: 7.5vw;
 }
-.user-div .col-sm-4:nth-child(2) b{
-    color: #608bff;
+.user-div .col-sm-4:nth-child(2) b {
+  color: #608bff;
 }
-.event-desc{
+.event-desc {
   margin-bottom: 2.5vw;
-   margin-top: 2.5vw;
+  margin-top: 2.5vw;
 }
