@@ -21,10 +21,10 @@
     "ip2location-nodejs": "^9.0.0",
     "moment": "^2.29.1",
     "mongoose": "^6.0.6",
-    "nodemon": "^2.0.12",
+    "nodemon": "^2.0.14",
     "passport": "^0.4.1",
     "passport-local-mongoose": "^6.1.0",
     "spotify-web-api-node": "^5.0.2",
-    "twilio": "^3.67.2"
+    "twilio": "^3.70.0"
   }
 }
